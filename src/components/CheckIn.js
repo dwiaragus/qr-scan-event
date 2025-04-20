@@ -66,9 +66,9 @@ const CheckIn = () => {
     // UPDATE (PUT)
     axios.put(`https://express-crud-event-production.up.railway.app/guests/${editingId}`, form)
       .then(res => {
-        setGuests(prev => prev.map(g => g._id === editingId ? res.data : g));
+        setGuests(prev => prev.map(g => g.Email_Address === editingId ? res.data : g));
         setForm({
-          Nama: '', _id: '', check_in: '', Email_Address: '', Nomor_Handphone: '',
+          Nama: '', _id: '', check_in: "true", Email_Address: '', Nomor_Handphone: '',
           Fakultas: '', Angkatan_Masuk: '',
           Perusahaan_Tempat_Bekerja: ''
         });
@@ -91,7 +91,7 @@ const CheckIn = () => {
     // Handle Edit
     const handleEdit = (guest) => {
       setForm(guest);
-      setEditingId(guest._id);
+      setEditingId(guest.Email_Address);
     };
 
     // Handle Delete
