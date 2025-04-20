@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dwiaragus/qr-scan-event/static/css/main.c60f7f4b.css",
+    "main.js": "/dwiaragus/qr-scan-event/static/js/main.2a015047.js",
+    "index.html": "/dwiaragus/qr-scan-event/index.html",
+    "main.c60f7f4b.css.map": "/dwiaragus/qr-scan-event/static/css/main.c60f7f4b.css.map",
+    "main.2a015047.js.map": "/dwiaragus/qr-scan-event/static/js/main.2a015047.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c60f7f4b.css",
+    "static/js/main.2a015047.js"
+  ]
+}
