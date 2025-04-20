@@ -1,11 +1,9 @@
 // src/components/CheckIn.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { QrReader } from 'react-qr-reader';
-import axios from 'axios';
 import GuestTable from './GuestTable';
 
 const CheckIn = () => {
-  const [guests, setGuests] = useState([]);
   const [scannedData, setScannedData] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -22,17 +20,6 @@ const CheckIn = () => {
     setErrorMessage('Terjadi kesalahan saat memindai: ' + error?.message);
     console.error(error);
   };
-
-  useEffect(() => {
-      // Mengambil data tamu dari backend
-      axios.get('http://localhost:3000/guests')
-        .then(response => {
-          setGuests(response.data);  // Menyimpan data tamu ke state
-        })
-        .catch(error => {
-          console.error('There was an error!', error);
-        });
-  }, []);
 
   return (
     <div>
