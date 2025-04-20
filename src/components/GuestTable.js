@@ -37,7 +37,7 @@ const GuestTable = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:3000/guests')
+    axios.get('https://express-crud-event-production.up.railway.app/guests')
       .then(response => setGuests(response.data))
       .catch(error => console.error('There was an error!', error));
   }, []);
@@ -49,7 +49,7 @@ const GuestTable = () => {
     if (editingId) {
         console.log("editingId:", editingId)
       // UPDATE (PUT)
-      axios.put(`http://localhost:3000/guests/${editingId}`, form)
+      axios.put(`https://express-crud-event-production.up.railway.app/guests/${editingId}`, form)
         .then(res => {
           setGuests(prev => prev.map(g => g._id === editingId ? res.data : g));
           setForm({
@@ -61,7 +61,7 @@ const GuestTable = () => {
         });
     } else {
       // CREATE (POST)
-      axios.post('http://localhost:3000/guests', form)
+      axios.post('https://express-crud-event-production.up.railway.app/guests', form)
         .then(res => {
           setGuests(prev => [...prev, res.data]);
           setForm({
@@ -81,7 +81,7 @@ const GuestTable = () => {
 
   // Handle Delete
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/guests/${id}`)
+    axios.delete(`https://express-crud-event-production.up.railway.app/guests/${id}`)
       .then(() => {
         setGuests(prev => prev.filter(g => g._id !== id));
       });
